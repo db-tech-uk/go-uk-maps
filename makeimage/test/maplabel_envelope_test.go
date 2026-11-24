@@ -8,11 +8,11 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/db-tech-uk/go-geos-draw/geom"
+	"github.com/db-tech-uk/go-nationalgrid"
+	"github.com/db-tech-uk/go-text/text"
 	"github.com/llgcode/draw2d"
 	"github.com/llgcode/draw2d/draw2dimg"
-	"github.com/rockwell-uk/go-geos-draw/geom"
-	"github.com/rockwell-uk/go-nationalgrid"
-	"github.com/rockwell-uk/go-text/text"
 
 	apitypes "go-uk-maps/api/types"
 	"go-uk-maps/colours"
@@ -20,6 +20,7 @@ import (
 	"go-uk-maps/makeimage/types"
 )
 
+//nolint:goconst
 func TestEnvelope(t *testing.T) {
 	noSplit := func(s string) bool {
 		return false
@@ -232,13 +233,15 @@ func TestEnvelope(t *testing.T) {
 			})
 
 			envelope := l.Dimensions.Envelope
+
+			// round-trip expected through GEOS so both sides share the same WKT formatting
+			expected, err := gctx.NewGeomFromWKT(tl.expectedEnvelope)
 			if err != nil {
 				t.Fatal(err)
 			}
-			actual := envelope.ToWKT()
 
-			if tl.expectedEnvelope != actual {
-				t.Errorf("%v\nExpected %v\nActual %v", name, tl.expectedEnvelope, actual)
+			if expected.String() != envelope.String() {
+				t.Errorf("%v\nExpected %v\nActual %v", name, expected, envelope)
 			}
 
 			// draw the label background

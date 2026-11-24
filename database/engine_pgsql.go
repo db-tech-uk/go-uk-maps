@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/db-tech-uk/go-logger/logger"
 	"github.com/jmoiron/sqlx"
 	_ "github.com/lib/pq"
-	"github.com/rockwell-uk/go-logger/logger"
 )
 
 type PgSQL struct {

@@ -3,7 +3,8 @@ package types
 import (
 	"testing"
 
-	"github.com/rockwell-uk/go-nationalgrid"
+	"github.com/db-tech-uk/go-nationalgrid"
+	"github.com/twpayne/go-geos"
 )
 
 func TestTileRequestValidate(t *testing.T) {
@@ -81,14 +82,22 @@ func TestTileRequestBoundsGeom(t *testing.T) {
 		},
 	}
 
+	gctx := geos.NewContext()
+
 	for tname, tt := range tests {
 		actual, err := tt.tileRequest.BoundsGeom()
 		if err != nil {
 			t.Fatalf("%v: %v %v", tname, actual, err)
 		}
 
-		if tt.boundsGeom != actual.String() {
-			t.Fatalf("%v:\nexpected %+v\ngot %+v", tname, tt.boundsGeom, actual)
+		// round-trip expected through GEOS so both sides share the same WKT formatting
+		expected, err := gctx.NewGeomFromWKT(tt.boundsGeom)
+		if err != nil {
+			t.Fatal(err)
+		}
+
+		if expected.String() != actual.String() {
+			t.Fatalf("%v:\nexpected %+v\ngot %+v", tname, expected, actual)
 		}
 	}
 }

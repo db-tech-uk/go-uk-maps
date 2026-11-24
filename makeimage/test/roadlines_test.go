@@ -10,10 +10,10 @@ import (
 	"strconv"
 	"testing"
 
+	"github.com/db-tech-uk/go-geos-draw/geom"
+	"github.com/db-tech-uk/go-text/fonts"
 	"github.com/llgcode/draw2d"
 	"github.com/llgcode/draw2d/draw2dimg"
-	"github.com/rockwell-uk/go-geos-draw/geom"
-	"github.com/rockwell-uk/go-text/fonts"
 	"github.com/twpayne/go-geos"
 
 	"go-uk-maps/colours"
@@ -21,6 +21,7 @@ import (
 	"go-uk-maps/makeimage/types"
 )
 
+//nolint:goconst
 func TestLineTest(t *testing.T) {
 	title := "Line Styles"
 

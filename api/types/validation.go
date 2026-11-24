@@ -13,5 +13,5 @@ func ErrorMsg(errorList []string) error {
 	if len(errorList) == 0 {
 		return nil
 	}
-	return fmt.Errorf("validation failed: " + strings.Join(errorList, ","))
+	return fmt.Errorf("validation failed: %s", strings.Join(errorList, ","))
 }

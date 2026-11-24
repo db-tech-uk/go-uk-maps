@@ -8,17 +8,18 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/db-tech-uk/go-geos-draw/geom"
+	"github.com/db-tech-uk/go-nationalgrid"
+	"github.com/db-tech-uk/go-text/fonts"
+	"github.com/db-tech-uk/go-text/text"
 	"github.com/llgcode/draw2d"
 	"github.com/llgcode/draw2d/draw2dimg"
-	"github.com/rockwell-uk/go-geos-draw/geom"
-	"github.com/rockwell-uk/go-nationalgrid"
-	"github.com/rockwell-uk/go-text/fonts"
-	"github.com/rockwell-uk/go-text/text"
 
 	"go-uk-maps/api/types"
 	"go-uk-maps/colours"
 )
 
+//nolint:goconst
 func TestGetLineData(t *testing.T) {
 	tests := map[string]struct {
 		wkt        string
@@ -131,6 +132,7 @@ func TestGetLineData(t *testing.T) {
 	}
 }
 
+//nolint:goconst
 func TestDrawRoadLines(t *testing.T) {
 	tests := map[string]struct {
 		dim          int

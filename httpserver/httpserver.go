@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/rockwell-uk/go-logger/logger"
+	"github.com/db-tech-uk/go-logger/logger"
 
 	"go-uk-maps/globvar"
 )

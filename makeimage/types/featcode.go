@@ -68,7 +68,7 @@ const (
 	FEAT_NARROW_GAGUE_RAILWAY FeatCode = 25302
 
 	// RailwayTunnel.shp.
-	FEAT_RAIL_TUNNEL_ALLIGNMENT FeatCode = 25303
+	FEAT_RAIL_TUNNEL_ALIGNMENT FeatCode = 25303
 
 	// RailwayStation.shp.
 	FEAT_LIGHT_RAPID_TRANSIT_STATION                                FeatCode = 25420

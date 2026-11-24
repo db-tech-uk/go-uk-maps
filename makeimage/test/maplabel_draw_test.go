@@ -5,9 +5,9 @@ import (
 	"image/draw"
 	"testing"
 
+	"github.com/db-tech-uk/go-text/fonts"
 	"github.com/llgcode/draw2d"
 	"github.com/llgcode/draw2d/draw2dimg"
-	"github.com/rockwell-uk/go-text/fonts"
 	"github.com/twpayne/go-geos"
 
 	"go-uk-maps/colours"
@@ -18,6 +18,7 @@ var (
 	gctx = geos.NewContext()
 )
 
+//nolint:goconst
 func TestDrawLabel(t *testing.T) {
 	dimX := 1024
 	dimY := 768

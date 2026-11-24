@@ -3,8 +3,8 @@ package types
 import (
 	"reflect"
 
-	"github.com/rockwell-uk/go-geos-draw/geom"
-	"github.com/rockwell-uk/go-nationalgrid"
+	"github.com/db-tech-uk/go-geos-draw/geom"
+	"github.com/db-tech-uk/go-nationalgrid"
 	"github.com/twpayne/go-geos"
 )
 
@@ -33,11 +33,11 @@ func (r TileRequest) LocationIsValid() bool {
 	return !reflect.DeepEqual(r.Location, nationalgrid.Location{})
 }
 
-func (r TileRequest) Envelope() *geos.Bounds {
+func (r TileRequest) Envelope() *geos.Box2D {
 	tileWidth, tileHeight := r.Dims()
 	tileOrigin := r.Origin()
 
-	return geos.NewBounds(tileOrigin.LatLon.Lat, tileOrigin.LatLon.Lon, tileOrigin.LatLon.Lat+tileWidth, tileOrigin.LatLon.Lon+tileHeight)
+	return geos.NewBox2D(tileOrigin.LatLon.Lat, tileOrigin.LatLon.Lon, tileOrigin.LatLon.Lat+tileWidth, tileOrigin.LatLon.Lon+tileHeight)
 }
 
 func (r TileRequest) Dims() (float64, float64) {
@@ -94,12 +94,12 @@ func (r TileRequest) BoundsCoords() ([]float64, []float64) {
 	tileOrigin := r.Origin()
 
 	return []float64{
-			tileOrigin.LatLon.Lat,
-			tileOrigin.LatLon.Lon + tileHeight,
-		}, []float64{
-			tileOrigin.LatLon.Lat + tileWidth,
-			tileOrigin.LatLon.Lon,
-		}
+		tileOrigin.LatLon.Lat,
+		tileOrigin.LatLon.Lon + tileHeight,
+	}, []float64{
+		tileOrigin.LatLon.Lat + tileWidth,
+		tileOrigin.LatLon.Lon,
+	}
 }
 
 func (r TileRequest) BoundsGeom() (*geos.Geom, error) {

@@ -3,9 +3,9 @@ package makeimage
 import (
 	"fmt"
 
-	"github.com/rockwell-uk/go-geos-draw/geom"
-	"github.com/rockwell-uk/go-logger/logger"
-	"github.com/rockwell-uk/go-text/text"
+	"github.com/db-tech-uk/go-geos-draw/geom"
+	"github.com/db-tech-uk/go-logger/logger"
+	"github.com/db-tech-uk/go-text/text"
 	"github.com/twpayne/go-geos"
 
 	apitypes "go-uk-maps/api/types"
@@ -24,7 +24,7 @@ func shouldBeAdded(r apitypes.TileRequest, assetsAdded types.AssetsAdded, l type
 	}
 
 	var g *geos.Geom
-	var envelope *geos.Geom = l.Dimensions.Envelope
+	envelope := l.Dimensions.Envelope
 
 	switch l.LabelType {
 	case types.LABEL_ICON:

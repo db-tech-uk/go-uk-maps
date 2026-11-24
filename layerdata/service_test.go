@@ -8,15 +8,16 @@ import (
 	"path"
 	"testing"
 
+	"github.com/db-tech-uk/go-geos-draw/geom"
+	"github.com/db-tech-uk/go-nationalgrid"
 	"github.com/llgcode/draw2d/draw2dimg"
-	"github.com/rockwell-uk/go-geos-draw/geom"
-	"github.com/rockwell-uk/go-nationalgrid"
 	"github.com/twpayne/go-geos"
 
 	"go-uk-maps/api/types"
 	"go-uk-maps/colours"
 )
 
+//nolint:goconst
 func TestIsInViewPolygonsMix(t *testing.T) {
 	tests := map[string]struct {
 		bigTileWKTs  []string
@@ -44,7 +45,7 @@ func TestIsInViewPolygonsMix(t *testing.T) {
 		},
 	}
 
-	var targetTilePoly string = "POLYGON((387221.1985319799860008 410715.0784210899728350, 392221.1985319799860008 410715.0784210899728350, 392221.1985319799860008 415715.0784210899728350, 387221.1985319799860008 415715.0784210899728350, 387221.1985319799860008 410715.0784210899728350))"
+	targetTilePoly := "POLYGON((387221.1985319799860008 410715.0784210899728350, 392221.1985319799860008 410715.0784210899728350, 392221.1985319799860008 415715.0784210899728350, 387221.1985319799860008 415715.0784210899728350, 387221.1985319799860008 410715.0784210899728350))"
 	targetTileGeom, _ := gctx.NewGeomFromWKT(targetTilePoly)
 
 	for tname, tt := range tests {

@@ -1,8 +1,8 @@
 package makeimage
 
 import (
+	"github.com/db-tech-uk/go-text/fonts"
 	"github.com/llgcode/draw2d/draw2dimg"
-	"github.com/rockwell-uk/go-text/fonts"
 	"github.com/twpayne/go-geos"
 
 	"go-uk-maps/makeimage/types"
@@ -21,7 +21,7 @@ func prepareLabel(gc *draw2dimg.GraphicContext, l *types.ImageLayer, a types.Lay
 
 	// Named Places - we have font sizes defined so override the "default"
 	if dataType == types.CARTOGRAPHIC {
-		var textSize string = a.CartographicFontDetails.FontHeight
+		textSize := a.CartographicFontDetails.FontHeight
 
 		labelStyle, err := types.GetLabelStyleByTextSize(textSize)
 		if err != nil {

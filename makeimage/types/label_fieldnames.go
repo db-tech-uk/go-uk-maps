@@ -5,6 +5,8 @@ import (
 )
 
 // LABELFIELDNAMES.
+//
+//nolint:goconst
 var LabelFieldNames = map[DataType][]string{
 	NO_LABEL:         {},
 	SITE:             {"DISTNAME"},

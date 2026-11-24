@@ -21,3 +21,4 @@ vendor/
 go-uk-maps
 db
 dev
+.golangci.bck.yml

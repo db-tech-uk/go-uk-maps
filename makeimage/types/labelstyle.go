@@ -15,6 +15,7 @@ type LabelStyle struct {
 	LabelBackgroundStyle TextStyle
 }
 
+//nolint:goconst
 var LabelStyles = map[TextFormat]LabelStyle{
 	HEIGHTPOINT: {
 		LabelTextStyle: TextStyle{

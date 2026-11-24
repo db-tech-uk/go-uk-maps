@@ -6,6 +6,7 @@ import (
 	"go-uk-maps/makeimage"
 )
 
+//nolint:goconst
 func TestIsOvelapping(t *testing.T) {
 	type testLabel struct {
 		name string

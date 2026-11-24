@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/rockwell-uk/go-logger/logger"
-	"github.com/rockwell-uk/go-nationalgrid"
-	"github.com/rockwell-uk/go-utils/sliceutils"
+	"github.com/db-tech-uk/go-logger/logger"
+	"github.com/db-tech-uk/go-nationalgrid"
+	"github.com/db-tech-uk/go-utils/sliceutils"
 	"github.com/twpayne/go-geos"
 
 	"go-uk-maps/api/types"
@@ -195,7 +195,7 @@ func getRecords(db database.StorageEngine, subSquaresMap map[string][]int, targe
 }
 
 // is the geometry fully or partially in view?
-func isInView(item *geos.Bounds, target *geos.Bounds) bool {
+func isInView(item *geos.Box2D, target *geos.Box2D) bool {
 	intersects := item.Intersects(target)
 	within := item.Contains(target)
 

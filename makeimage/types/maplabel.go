@@ -6,10 +6,10 @@ import (
 	"image/color"
 	"strings"
 
+	"github.com/db-tech-uk/go-geos-draw/geom"
+	"github.com/db-tech-uk/go-text/fonts"
+	"github.com/db-tech-uk/go-text/text"
 	"github.com/llgcode/draw2d/draw2dimg"
-	"github.com/rockwell-uk/go-geos-draw/geom"
-	"github.com/rockwell-uk/go-text/fonts"
-	"github.com/rockwell-uk/go-text/text"
 	"github.com/twpayne/go-geos"
 )
 
@@ -139,7 +139,7 @@ func (l *MapLabel) getLineDetails() {
 	}
 
 	var longestLineWidth float64
-	var lines []string = text.SplitStringInTwo(l.Label, l.ShouldSplitFn)
+	lines := text.SplitStringInTwo(l.Label, l.ShouldSplitFn)
 	var lineData = make(map[string]LineData)
 
 	for _, v := range lines {

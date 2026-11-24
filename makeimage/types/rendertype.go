@@ -11,6 +11,8 @@ type RenderType struct {
 }
 
 // RENDERTYPES array["StrokeWidth", "LineThickness", "DotRadius"].
+//
+//nolint:goconst
 var RenderTypes = map[string]RenderType{
 	"building":   {0.1, 0.4, 5.0},
 	"glasshouse": {0.1, 0.1, 5.0},

@@ -6,9 +6,9 @@ import (
 	"image/draw"
 	"strings"
 
+	"github.com/db-tech-uk/go-geos-draw/geom"
+	"github.com/db-tech-uk/go-logger/logger"
 	"github.com/llgcode/draw2d/draw2dimg"
-	"github.com/rockwell-uk/go-geos-draw/geom"
-	"github.com/rockwell-uk/go-logger/logger"
 	"github.com/twpayne/go-geos"
 
 	apitypes "go-uk-maps/api/types"
@@ -24,8 +24,8 @@ var (
 )
 
 func DrawImage(r apitypes.TileRequest, layerOrder []string, layerData map[string][]layerdata.LayerData) (*image.Image, error) {
-	var tileWidth float64 = r.TileWidth
-	var tileHeight float64 = r.TileHeight
+	tileWidth := r.TileWidth
+	tileHeight := r.TileHeight
 	var tileImage image.Image
 
 	logger.Log(

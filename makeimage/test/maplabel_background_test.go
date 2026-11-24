@@ -6,17 +6,18 @@ import (
 	"image/draw"
 	"testing"
 
+	"github.com/db-tech-uk/go-geos-draw/geom"
+	"github.com/db-tech-uk/go-nationalgrid"
+	"github.com/db-tech-uk/go-text/fonts"
 	"github.com/llgcode/draw2d"
 	"github.com/llgcode/draw2d/draw2dimg"
-	"github.com/rockwell-uk/go-geos-draw/geom"
-	"github.com/rockwell-uk/go-nationalgrid"
-	"github.com/rockwell-uk/go-text/fonts"
 
 	apitypes "go-uk-maps/api/types"
 	"go-uk-maps/colours"
 	"go-uk-maps/makeimage/types"
 )
 
+//nolint:goconst
 func TestDrawBackground(t *testing.T) {
 	type testLabel struct {
 		name string

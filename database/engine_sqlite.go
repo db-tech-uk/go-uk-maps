@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/db-tech-uk/go-logger/logger"
 	"github.com/jmoiron/sqlx"
 	"github.com/mattn/go-sqlite3"
-	"github.com/rockwell-uk/go-logger/logger"
 )
 
 var (

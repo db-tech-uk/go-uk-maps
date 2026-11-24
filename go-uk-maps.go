@@ -7,8 +7,8 @@ import (
 	"os/signal"
 	"time"
 
+	"github.com/db-tech-uk/go-logger/logger"
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/rockwell-uk/go-logger/logger"
 
 	"go-uk-maps/api"
 	"go-uk-maps/database"
@@ -59,7 +59,7 @@ func main() {
 		StorageFolder: dbfolder,
 		Timeout:       dbtimeout,
 	}
-	var db database.StorageEngine = database.Start(dbConfig)
+	db := database.Start(dbConfig)
 
 	// Start our logger
 	var vbs logger.LogLvl

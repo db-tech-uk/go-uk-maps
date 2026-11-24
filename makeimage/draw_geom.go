@@ -3,9 +3,9 @@ package makeimage
 import (
 	"fmt"
 
+	"github.com/db-tech-uk/go-geos-draw/geom"
+	"github.com/db-tech-uk/go-logger/logger"
 	"github.com/llgcode/draw2d/draw2dimg"
-	"github.com/rockwell-uk/go-geos-draw/geom"
-	"github.com/rockwell-uk/go-logger/logger"
 	"github.com/twpayne/go-geos"
 
 	"go-uk-maps/makeimage/types"

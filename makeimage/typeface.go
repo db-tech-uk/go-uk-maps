@@ -1,11 +1,9 @@
 package makeimage
 
 import (
-	"image/color"
-
+	"github.com/db-tech-uk/go-text/fonts"
 	"github.com/llgcode/draw2d"
 	"github.com/llgcode/draw2d/draw2dimg"
-	"github.com/rockwell-uk/go-text/fonts"
 
 	"go-uk-maps/makeimage/types"
 )
@@ -15,9 +13,9 @@ func GetTypeFace(gc *draw2dimg.GraphicContext, l *types.ImageLayer, t types.Text
 	var fontData draw2d.FontData
 	var fontDataStyle draw2d.FontStyle
 
-	var fontName string = t.FontName
-	var fontSize float64 = t.Size * l.Zoom
-	var fillCol color.RGBA = t.Color
+	fontName := t.FontName
+	fontSize := t.Size * l.Zoom
+	fillCol := t.Color
 
 	switch fontName {
 	case "regular":

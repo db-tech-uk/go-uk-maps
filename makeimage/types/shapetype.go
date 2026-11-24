@@ -16,6 +16,8 @@ type ShapeType struct {
 }
 
 // SHAPETYPES array["linecol", "fillcol", "datatype", "rendertype", "textformat"].
+//
+//nolint:goconst
 var ShapeTypes = map[FeatCode]ShapeType{
 	// Building.shp
 	FEAT_BUILDING: {colours.Darkpeach, colours.Peach, LINE, "building", LABEL}, // Building
@@ -80,7 +82,7 @@ var ShapeTypes = map[FeatCode]ShapeType{
 	FEAT_NARROW_GAGUE_RAILWAY: {colours.White, colours.Darkgrey, NO_LABEL, "rline_narrow", LABEL}, // Narrow Gauge Railway : Line
 
 	// RailwayTunnel.shp
-	FEAT_RAIL_TUNNEL_ALLIGNMENT: {colours.White, colours.Darkgrey, NO_LABEL, "rline_tunnel", LABEL}, // Rail Tunnel Alignment : Line
+	FEAT_RAIL_TUNNEL_ALIGNMENT: {colours.White, colours.Darkgrey, NO_LABEL, "rline_tunnel", LABEL}, // Rail Tunnel Alignment : Line
 
 	// RailwayStation.shp
 	FEAT_LIGHT_RAPID_TRANSIT_STATION:                                {colours.Darkgrey, colours.Lightyellow, LINE, "lrt_station", LABEL},   // Light Rapid Transit Station

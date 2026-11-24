@@ -3,11 +3,11 @@ package makeimage
 import (
 	"fmt"
 
+	"github.com/db-tech-uk/go-geos-draw/geom"
+	"github.com/db-tech-uk/go-text/fonts"
+	"github.com/db-tech-uk/go-text/text"
 	"github.com/llgcode/draw2d"
 	"github.com/llgcode/draw2d/draw2dimg"
-	"github.com/rockwell-uk/go-geos-draw/geom"
-	"github.com/rockwell-uk/go-text/fonts"
-	"github.com/rockwell-uk/go-text/text"
 
 	apitypes "go-uk-maps/api/types"
 	"go-uk-maps/makeimage/types"

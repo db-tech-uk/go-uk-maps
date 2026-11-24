@@ -1,0 +1,17 @@
+FROM ubuntu:22.04
+
+ENV DB_ENGINE=mysql
+ENV DB_HOST=10.0.105.3
+ENV DB_PORT=3307
+
+WORKDIR /app
+
+RUN apt-get update
+RUN apt-get install -y libgeos-dev
+RUN apt-get install -y golang
+RUN apt-get install -y ca-certificates
+
+COPY . /app
+RUN go build go-uk-maps.go
+
+CMD ["sh", "-c", "/app/go-uk-maps -v -dbengine $DB_ENGINE -dbhost $DB_HOST -dbport $DB_PORT"]

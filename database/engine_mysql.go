@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/db-tech-uk/go-logger/logger"
 	"github.com/jmoiron/sqlx"
-	"github.com/rockwell-uk/go-logger/logger"
 )
 
 type MySQL struct {

@@ -3,7 +3,7 @@ package api
 import (
 	"net/http"
 
-	"github.com/rockwell-uk/go-logger/logger"
+	"github.com/db-tech-uk/go-logger/logger"
 
 	"go-uk-maps/database"
 	"go-uk-maps/httpserver"
