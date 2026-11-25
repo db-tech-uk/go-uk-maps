@@ -31,8 +31,9 @@ const _DataType_name = "NO_LABELSITEPOINTLINEJUNCTIONCARTOGRAPHICEDUCATION_SCHOO
 var _DataType_index = [...]uint8{0, 8, 12, 17, 21, 29, 41, 57, 71, 79, 93, 100, 116, 132, 147, 161, 174}
 
 func (i DataType) String() string {
-	if i < 0 || i >= DataType(len(_DataType_index)-1) {
+	idx := int(i) - 0
+	if i < 0 || idx >= len(_DataType_index)-1 {
 		return "DataType(" + strconv.FormatInt(int64(i), 10) + ")"
 	}
-	return _DataType_name[_DataType_index[i]:_DataType_index[i+1]]
+	return _DataType_name[_DataType_index[idx]:_DataType_index[idx+1]]
 }

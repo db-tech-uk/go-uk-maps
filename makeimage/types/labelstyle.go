@@ -1,7 +1,5 @@
 package types
 
-//go:generate stringer -type=TextFormat
-
 import (
 	"fmt"
 

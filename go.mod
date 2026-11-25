@@ -23,4 +23,9 @@ require (
 	github.com/db-tech-uk/go-draw v1.0.1 // indirect
 	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0 // indirect
 	github.com/wroge/wgs84 v1.1.7 // indirect
+	golang.org/x/mod v0.43.0 // indirect
+	golang.org/x/sync v0.25.0 // indirect
+	golang.org/x/tools v0.53.0 // indirect
 )
+
+tool golang.org/x/tools/cmd/stringer

@@ -1,6 +1,6 @@
 package types
 
-//go:generate stringer -type=DataType
+//go:generate go tool stringer -type=DataType
 
 type DataType int
 

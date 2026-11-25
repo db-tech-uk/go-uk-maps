@@ -1,6 +1,6 @@
 package types
 
-//go:generate stringer -type=FeatCode
+//go:generate go tool stringer -type=FeatCode
 
 type FeatCode int
 

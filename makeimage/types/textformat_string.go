@@ -32,8 +32,9 @@ const _TextFormat_name = "HEIGHTPOINTLABELMOTORWAYPRIMARY_ROADA_ROADB_ROADMINOR_
 var _TextFormat_index = [...]uint8{0, 11, 16, 24, 36, 42, 48, 58, 70, 82, 99, 110, 121, 132, 140, 149, 157, 171}
 
 func (i TextFormat) String() string {
-	if i < 0 || i >= TextFormat(len(_TextFormat_index)-1) {
+	idx := int(i) - 0
+	if i < 0 || idx >= len(_TextFormat_index)-1 {
 		return "TextFormat(" + strconv.FormatInt(int64(i), 10) + ")"
 	}
-	return _TextFormat_name[_TextFormat_index[i]:_TextFormat_index[i+1]]
+	return _TextFormat_name[_TextFormat_index[idx]:_TextFormat_index[idx+1]]
 }

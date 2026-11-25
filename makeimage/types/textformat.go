@@ -1,6 +1,6 @@
 package types
 
-//go:generate stringer -type=TextFormat
+//go:generate go tool stringer -type=TextFormat
 
 import (
 	"fmt"
